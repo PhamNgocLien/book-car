@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             AreaSeeder::class,
             AddressSeeder::class,
             CarSeeder::class,
-            StatusSeeder::class
+            StatusSeeder::class,
+            UserSeeder::class
             ]);
     }
 }

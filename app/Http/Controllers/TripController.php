@@ -39,7 +39,7 @@ class TripController extends Controller
 
     public function indexTrip()
     {
-        $bookings = Booking::where('user_id', Auth::user()->id)->orderBy('id','desc')->get();
+        $bookings = Booking::where('user_id', Auth::user()->id)->orderBy('status_id')->get();
         $addresses = Address::all();
         return view('trip.trip', compact('bookings', 'addresses'));
     }
@@ -106,12 +106,17 @@ class TripController extends Controller
 
         $car = Car::where('id', $data[0])->first();
         $booking = Booking::where('id', $data[1])->first();
+        $trip = Trip::where('id','$data[1]')->first();
+
         $car->person = $car->person + $booking->person;
         $car->save();
 
         $booking->car_id = $data[0];
         $booking->status_id = 2;
         $booking->save();
+
+        $trip->car = $data[0];
+        $trip->save();
 
         return redirect()->route('admin.index');
     }

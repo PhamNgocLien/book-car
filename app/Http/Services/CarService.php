@@ -21,4 +21,5 @@ class CarService
     {
             $cars = Car::where('area_id','=',$areaId)->get();
     }
+
 }

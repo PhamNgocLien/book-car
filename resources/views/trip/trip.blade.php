@@ -127,8 +127,10 @@
                                         <td @if($booking->status_id == 5) style="color: red" @endif>{{$booking->status->status_name}}</td>
                                         <td>@if($booking->status_id == 1)
                                                 Chưa xác định
+                                            @elseif($booking->status_id == 5)
+                                                -
                                             @else
-                                                {{$booking->car->car_name}}
+                                                {{$booking->car_name}}
                                             @endif</td>
                                         <td>
                                             <a href="{{route('booking.edit',['id' => $booking->id])}}">
