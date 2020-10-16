@@ -50,7 +50,7 @@
                                         <td>{{$booking->user->name}}</td>
                                         <td>{{$booking->user->phone}}</td>
                                         <td>{{$booking->trip->startPlace->address}}</td>
-                                        <td>{{$booking->trip->startPlace->address}}</td>
+                                        <td>{{$booking->trip->endPlace->address}}</td>
                                         <td>{{\Carbon\Carbon::parse($booking->trip->date)->format('d-m-Y') .' '. $booking->trip->time . ':00'}}</td>
                                         <td>{{$booking->person}}</td>
                                         <td @if($booking->status_id == 5) style="color: red" @endif>{{$booking->status->status_name}}</td>

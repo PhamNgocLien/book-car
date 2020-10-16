@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37e3bf11-e838-4655-9f17-542201284551" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TripController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TripController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Trip.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Trip.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_09_042029_create_trips_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_09_042029_create_trips_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/CarSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/CarSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/template/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/template/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/arrange.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/arrange.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trip/trip.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trip/trip.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +160,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602825116165</updated>
-      <workItem from="1602825117401" duration="4008000" />
+      <workItem from="1602825117401" duration="5331000" />
     </task>
     <servers />
   </component>

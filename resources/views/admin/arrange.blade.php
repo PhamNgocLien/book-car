@@ -5,7 +5,6 @@
     <div class="col-lg-8 d-none d-xl-block">
         <nav class="mainmenu alignright">
             <ul>
-                <li><a href="{{route('admin.trip.index')}}">Danh sách chuyến đi</a></li>
                 <li><a href="{{route('info.index')}}">Thông tin tài khoản</a></li>
                 <li><a href="{{route('logout')}}">Đăng xuất</a></li>
             </ul>
@@ -53,7 +52,7 @@
                                             <td>{{$booking->user->name}}</td>
                                             <td>{{$booking->user->phone}}</td>
                                             <td>{{$booking->trip->startPlace->address}}</td>
-                                            <td>{{$booking->trip->startPlace->address}}</td>
+                                            <td>{{$booking->trip->endPlace->address}}</td>
                                             <td>{{\Carbon\Carbon::parse($booking->trip->date)->format('d-m-Y') .' '. $booking->trip->time . ':00'}}</td>
                                             <td>{{$booking->person}}</td>
                                             <td @if($booking->status_id == 5) style="color: red" @endif>{{$booking->status->status_name}}</td>
@@ -62,11 +61,19 @@
                                                         <option selected disabled>Chọn xe</option>
                                                         @foreach($cars as $key => $car)
                                                             <option value="{{$car->id}},{{$booking->id}}"
-                                                                @if($car->id == $booking->car_id) selected @endif
+                                                                    @if($car->id == $booking->car_id) selected @endif
 
-                                                                @if($booking->trip->startPlace->area_id != $car->area_id || $booking->person > 9-($car->person))
+                                                                    @if($booking->trip->car_id != null && $booking->person <= 9-$booking->trip->person && $car->id == $booking->trip->car_id)
+                                                                    selected
+                                                                    @endif
+
+                                                                    @if($booking->trip->car_id != null && $booking->person <= 9-$booking->trip->person && $car->id !== $booking->trip->car_id)
                                                                     disabled
-                                                                @endif>
+                                                                    @endif
+
+                                                                    @if($booking->trip->startPlace->area_id != $car->area_id || $booking->person > 9-($car->person))
+                                                                    disabled
+                                                                    @endif>
 
                                                                 {{$car->car_name}}
 

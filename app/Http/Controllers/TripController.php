@@ -148,6 +148,15 @@ class TripController extends Controller
         $trip->status_id = 4;
         $trip->save();
 
+        $carId = $trip->car_id;
+        $car = Car::find($carId);
+        if( $car->area_id = 1){
+            $car->area_id = 2;
+        } else {
+            $car->area_id = 1;
+        }
+
+
         return redirect()->route('admin.index');
     }
 }
