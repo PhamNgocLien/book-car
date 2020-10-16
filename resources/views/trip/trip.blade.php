@@ -134,13 +134,13 @@
                                             @endif</td>
                                         <td>
                                             <a href="{{route('booking.edit',['id' => $booking->id])}}">
-                                                <button @if($booking->status_id == 5) disabled
+                                                <button @if($booking->status_id > 2) disabled
                                                         @endif
                                                         style="margin: 3px" class="btn btn-primary">Chỉnh sửa
                                                 </button>
                                             </a>
                                             <a href="{{route('booking.delete',['id' => $booking->id])}}">
-                                                <button @if($booking->status_id == 5) disabled
+                                                <button @if($booking->status_id > 2) disabled
                                                         @endif
                                                         style="margin: 3px" class="btn btn-danger">Hủy chuyến
                                                 </button>

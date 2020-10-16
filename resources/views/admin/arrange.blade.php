@@ -61,19 +61,19 @@
                                                     <select class="custom-select" name="car_booking">
                                                         <option selected disabled>Chọn xe</option>
                                                         @foreach($cars as $key => $car)
-                                                            <option
-                                                                @if($car->id == $booking->car_id)
-                                                                selected
-                                                                @endif
-                                                                value={{$car->id}},{{$booking->id}}
-                                                                @if($booking->trip->startPlace->area_id != $car->area_id || $booking->person > 9-($car->person)){
-                                                                disabled
-                                                                }
-                                                                @endif
-                                                            >{{$car->car_name}}
+                                                            <option value="{{$car->id}},{{$booking->id}}"
+                                                                @if($car->id == $booking->car_id) selected @endif
+
+                                                                @if($booking->trip->startPlace->area_id != $car->area_id || $booking->person > 9-($car->person))
+                                                                    disabled
+                                                                @endif>
+
+                                                                {{$car->car_name}}
+
                                                                 @if($booking->trip->startPlace->area_id == $car->area_id)
                                                                     - còn {{9-($car->person)}} chỗ
-                                                                @endif</option>
+                                                                @endif
+                                                            </option>
                                                         @endforeach
                                                     </select>
                                                     @if($booking->status_id == 2)

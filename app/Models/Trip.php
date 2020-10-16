@@ -14,6 +14,9 @@ class Trip extends Model
         'end_place',
         'date',
         'time',
+        'status_id',
+        'person',
+        'car_id'
     ];
 
     public static function firstOrCreate()

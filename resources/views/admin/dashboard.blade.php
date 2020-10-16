@@ -5,7 +5,6 @@
     <div class="col-lg-8 d-none d-xl-block">
         <nav class="mainmenu alignright">
             <ul>
-                <li><a href="{{route('admin.trip.index')}}">Danh sách chuyến đi</a></li>
                 <li><a href="{{route('info.index')}}">Thông tin tài khoản</a></li>
                 <li><a href="{{route('logout')}}">Đăng xuất</a></li>
             </ul>
@@ -41,6 +40,7 @@
                                     <th scope="col">Số người</th>
                                     <th scope="col">Trạng thái</th>
                                     <th scope="col">Biển xe</th>
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -60,6 +60,26 @@
                                             @else
                                                 -
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{route('admin.trip.start',['id' => $booking->id])}}">
+                                                <button
+                                                    @if($booking->status_id != 2)
+                                                    disabled
+                                                    @endif
+                                                    type="submit" style="margin: 3px" class="btn btn-info">
+                                                    Xuất phát
+                                                </button>
+                                            </a>
+                                            <a href="{{route('admin.trip.end',['id' => $booking->id])}}">
+                                                <button
+                                                    @if($booking->status_id != 3)
+                                                    disabled
+                                                    @endif
+                                                    type="submit" style="margin: 3px" class="btn btn-info">
+                                                    Hoàn thành
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @empty

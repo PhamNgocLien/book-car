@@ -37,4 +37,6 @@ Route::get('/admin',[TripController::class,'indexAdmin'])->name('admin.index');
 Route::post('/admin',[TripController::class,'storeCar'])->name('admin.car.store');
 Route::get('/admin/arrange',[TripController::class,'arrangeCar'])->name('admin.car.arrange');
 Route::get('/admin/trip',[TripController::class,'tripAdmin'])->name('admin.trip.index');
+Route::get('/admin/trip/start/{id}',[TripController::class,'tripStart'])->name('admin.trip.start');
+Route::get('/admin/trip/end/{id}',[TripController::class,'tripEnd'])->name('admin.trip.end');
 

@@ -21,7 +21,7 @@ class CreateTripsTable extends Migration
             $table->string('time');
             $table->Integer('status_id')->default(1);
             $table->Integer('person')->default(0);
-            $table->integer('car')->nullable();
+            $table->integer('car_id')->nullable();
             $table->integer('driver')->nullable();
             $table->dateTime('created_at')->nullable();
             $table->dateTime('updated_at')->nullable();

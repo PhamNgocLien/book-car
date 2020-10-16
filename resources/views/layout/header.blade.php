@@ -1,5 +1,4 @@
 <header id="header-area" class="fixed-top">
-
     <!--== Header Bottom Start ==-->
     <div id="header-bottom">
         <div class="container">

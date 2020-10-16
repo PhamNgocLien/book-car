@@ -104,9 +104,10 @@ class TripController extends Controller
     {
         $data = explode(',', $request->car_booking);
 
-        $car = Car::where('id', $data[0])->first();
-        $booking = Booking::where('id', $data[1])->first();
-        $trip = Trip::where('id','$data[1]')->first();
+        $car = Car::find($data[0]);
+        $booking = Booking::find($data[1]);
+        $tripID = $booking->trip_id;
+        $trip = Trip::find($tripID);
 
         $car->person = $car->person + $booking->person;
         $car->save();
@@ -115,7 +116,36 @@ class TripController extends Controller
         $booking->status_id = 2;
         $booking->save();
 
-        $trip->car = $data[0];
+        $trip->car_id = $data[0];
+        $trip->status_id = 2;
+        $trip->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function tripStart(Request $request, $id)
+    {
+        $booking = Booking::find($id);
+        $booking->status_id = 3;
+        $booking->save();
+
+        $tripId = $booking->trip->id;
+        $trip = Trip::find($tripId);
+        $trip->status_id = 3;
+        $trip->save();
+
+        return redirect()->route('admin.index');
+    }
+
+    public function tripEnd(Request $request, $id)
+    {
+        $booking = Booking::find($id);
+        $booking->status_id = 4;
+        $booking->save();
+
+        $tripId = $booking->trip->id;
+        $trip = Trip::find($tripId);
+        $trip->status_id = 4;
         $trip->save();
 
         return redirect()->route('admin.index');
